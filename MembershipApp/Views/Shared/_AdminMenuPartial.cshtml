@@ -1,0 +1,71 @@
+﻿    
+    @* Dropdown Admin Menu  *@
+
+@if(Request.IsAuthenticated && User.IsInRole("Admin"))
+{
+    <li class="dropdown" data-admin-menu>
+    <a href="#">
+        Admin
+        <span class="glyphicon glyphicon-chevron-down"></span>
+    </a>
+        <ul class="dropdown-menu" role="menu">
+
+            <li class="dropdown-header">Minor Entities</li>
+            <li class="divider"></li>
+
+            <li>
+                @*@Html.ActionLink("Section","Index","Section")*@
+                <a href="/Admin/Section">&nbsp; Section</a>
+            </li>
+            <li>
+                <a href="/Admin/Part">&nbsp; Part</a>
+            </li>
+            <li>
+                <a href="/Admin/ItemType">&nbsp; Item Type</a>
+            </li>
+            <li>
+                <a href="/Admin/ProductType">&nbsp; Product Type</a>
+            </li>
+            <li>
+                <a href="/Admin/ProductLinkText">&nbsp; Product Link Text</a>
+            </li>
+
+            <li class="divider"></li>
+            <li class="dropdown-header">Major Entities</li>
+
+            <li>
+                <a href="/Admin/Item">&nbsp; Item</a>
+            </li>
+            <li>
+                <a href="/Admin/Product">&nbsp; Product</a>
+            </li>
+            <li>
+                <a href="/Admin/Subscription">&nbsp; Subscription</a>
+            </li>
+
+            <li class="divider"></li>
+            <li class="dropdown-header">Connector Entities</li>
+
+            <li>
+                <a href="/Admin/ProductItem">&nbsp; Product Item</a>
+            </li>
+            <li>
+                <a href="/Admin/SubscriptionProduct">&nbsp; Subscription Product</a>
+            </li>
+            <li class="divider"></li>
+
+            <li class="dropdown-header">Users & Subscription</li>
+            <li class="divider"></li>
+
+            <li>
+                <a href="/Account/">&nbsp; Users & Subscription</a>
+            </li>
+            <li class="dropdown-header">Upload a file</li>
+            <li class="divider"></li>
+
+            <li>
+               @Html.ActionLink("Upload", "Index", "File")
+            </li>
+        </ul>
+</li>
+}

@@ -1,0 +1,23 @@
+﻿using MembershipApp.Models;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace MembershipApp.Areas.Admin.Models
+{
+    public class SubscriptionProductModel
+    {
+        [DisplayName("Product Id")]
+        public int ProductId { get; set; }
+
+        [DisplayName("Subscription Id")]
+        public int SubscriptionId { get; set; }
+
+        [DisplayName("Product Title")]
+        public string ProductTitle { get; set; }
+
+        [DisplayName("Subscription Title")]
+        public string SubscriptionTitle { get; set; }
+        public ICollection<Product> Products { get; set; }
+        public ICollection<Subscription> Subscriptions { get; set; }
+    }
+}
